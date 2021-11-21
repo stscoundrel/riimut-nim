@@ -1,4 +1,3 @@
-proc dummyMethod : string =
-  result = "Lorem ipsum"
+import riimut/dialects/younger_futhark
 
-export dummyMethod
+export younger_futhark
