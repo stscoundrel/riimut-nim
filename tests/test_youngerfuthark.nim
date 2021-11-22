@@ -3,13 +3,13 @@ import unittest
 import riimut/dialects/youngerfuthark
 
 test "Younger Futhark: transforms letters to runes":
-  let content = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
-  let expected = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ";
+  const content = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
+  const expected = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ";
   let result = youngerfuthark.lettersToRunes(content);
   check result == expected
 
 test "Younger Futhark: transforms runes to letters":
-  let content = "ᚠᚢᚦᚬᚱᚴᚼᚽᚾᚿᛁᛅᛆᛋᛌᛏᛐᛒᛘᛚᛦ:";
-  let expected = "fuþorkhhnniaassttbmlR ";
+  const content = "ᚠᚢᚦᚬᚱᚴᚼᚽᚾᚿᛁᛅᛆᛋᛌᛏᛐᛒᛘᛚᛦ:";
+  const expected = "fuþorkhhnniaassttbmlR ";
   let result = youngerfuthark.runesToLetters(content);
   check result == expected
