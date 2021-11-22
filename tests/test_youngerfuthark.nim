@@ -1,15 +1,15 @@
 import unittest
 
-import riimut/dialects/younger_futhark
+import riimut/dialects/youngerfuthark
 
 test "Younger Futhark: transforms letters to runes":
   let content = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
   let expected = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ";
-  let result = younger_futhark.letters_to_runes(content);
+  let result = youngerfuthark.lettersToRunes(content);
   check result == expected
 
 test "Younger Futhark: transforms runes to letters":
   let content = "ᚠᚢᚦᚬᚱᚴᚼᚽᚾᚿᛁᛅᛆᛋᛌᛏᛐᛒᛘᛚᛦ:";
   let expected = "fuþorkhhnniaassttbmlR ";
-  let result = younger_futhark.runes_to_letters(content);
+  let result = youngerfuthark.runesToLetters(content);
   check result == expected

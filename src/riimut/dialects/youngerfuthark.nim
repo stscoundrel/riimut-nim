@@ -1,6 +1,6 @@
 from ../transform import transform
-from younger_futhark/letters_to_runes_table import getLettersToRunesMap
-from younger_futhark/runes_to_letters_table import getRunesToLettersMap
+from youngerfuthark/lettermapping import getLettersToRunesMap
+from youngerfuthark/runemapping import getRunesToLettersMap
 
 proc lettersToRunes(content: string) : string =
   const mapping = getLettersToRunesMap()
