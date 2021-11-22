@@ -1,3 +1,3 @@
-import riimut/dialects/younger_futhark
+import riimut/dialects/youngerfuthark
 
-export younger_futhark
+export youngerfuthark
