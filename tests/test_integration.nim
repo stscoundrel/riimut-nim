@@ -30,6 +30,20 @@ test "Parses Elder Futhark to text":
   let result = riimut.elderfuthark.runesToLetters(content)
   check result == expected
 
+test "Parses to Medieval Futhork":
+  # From Lord's Prayer, in Old Norse.
+  const content = "Faðer uor som ast i himlüm, halgað warðe þit nama"
+  const expected = "ᚠᛆᚦᚽᚱ:ᚢᚮᚱ:ᛋᚮᛘ:ᛆᛋᛏ:ᛁ:ᚼᛁᛘᛚᚢᛘ,:ᚼᛆᛚᚵᛆᚦ:ᚠᛆᚱᚦᚽ:ᚦᛁᛏ:ᚿᛆᛘᛆ"
+  let result = riimut.medievalfuthork.lettersToRunes(content)
+  check result == expected
+
+test "Parses Medieval Futhork to text":
+  # From Lord's Prayer, in Old Norse.
+  const content = "ᚠᛆᚦᚽᚱ:ᚢᚮᚱ:ᛋᚮᛘ:ᛆᛋᛏ:ᛁ:ᚼᛁᛘᛚᚢᛘ:ᚼᛆᛚᚵᛆᚦ:ᚠᛆᚱᚦᚽ:ᚦᛁᛏ:ᚿᛆᛘᛆ"
+  const expected = "faþer uor som ast i himlum halgaþ farþe þit nama" # Wont tell apart eth & thorn in mid sentence.
+  let result = riimut.medievalfuthork.runesToLetters(content)
+  check result == expected
+
 test "Parses to Futhorc":
   # From 8th century Franks Casket, in late West Saxon.
   const content = "fisc.flodu.ahofonferg | enberig |"
