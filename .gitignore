@@ -5,3 +5,4 @@ htmldocs/
 tests/**
 !tests/**/*.nim
 .DS_Store
+/.ionide
