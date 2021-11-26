@@ -16,7 +16,7 @@ Includes transformers for four main runic alphabets:
 ## Usage
 
 Text to runes:
-```js
+```nim
 # Ships four runic dialects under riimut module.
 import riimut
 
@@ -28,7 +28,7 @@ echo youngerFuthark) # ᛅᚢᚴ:ᛏᛅᚾᛁ:ᚴᛅᚱᚦᛁ:ᚴᚱᛁᛋᛏᚾ
 # From 4th century axe in Jutland
 const content = "wagagastiz alu wihgu sikijaz aiþalataz"
 let elderFuthark = riimut.elderfuthark.lettersToRunes(content)
-echo elderFuthark# ᚹᚨᚷᚨᚷᚨᛋᛏᛁᛉ:ᚨᛚᚢ:ᚹᛁᚻᚷᚢ:ᛋᛁᚲᛁᛃᚨᛉ:ᚨᛁᚦᚨᛚᚨᛏᚨᛉ
+echo elderFuthark # ᚹᚨᚷᚨᚷᚨᛋᛏᛁᛉ:ᚨᛚᚢ:ᚹᛁᚻᚷᚢ:ᛋᛁᚲᛁᛃᚨᛉ:ᚨᛁᚦᚨᛚᚨᛏᚨᛉ
 
 # From Lord's Prayer, in Old Norse.
 const content = "Faðer uor som ast i himlüm, halgað warðe þit nama"
@@ -42,7 +42,7 @@ echo futhorc # ᚠᛁᛋᚳ.ᚠᛚᚩᛞᚢ.ᚪᚻᚩᚠᚩᚾᚠᛖᚱᚷ:|:ᛖ
 ```
 
 Runes to text:
-```js
+```nim
 
 # All four dialects contain runesToLetters method.
 import riimut
