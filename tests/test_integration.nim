@@ -30,3 +30,16 @@ test "Parses Elder Futhark to text":
   let result = riimut.elderfuthark.runesToLetters(content)
   check result == expected
 
+test "Parses to Futhorc":
+  # From 8th century Franks Casket, in late West Saxon.
+  const content = "fisc.flodu.ahofonferg | enberig |"
+  const expected = "ᚠᛁᛋᚳ.ᚠᛚᚩᛞᚢ.ᚪᚻᚩᚠᚩᚾᚠᛖᚱᚷ:|:ᛖᚾᛒᛖᚱᛁᚷ:|"
+  let result = riimut.futhorc.lettersToRunes(content)
+  check result == expected
+
+test "Parses Futhorc to text":
+  # From 8th century Franks Casket, in late West Saxon.
+  const content = "ᚠᛁᛋᚳ.ᚠᛚᚩᛞᚢ.ᚪᚻᚩᚠᚩᚾᚠᛖᚱᚷ:|:ᛖᚾᛒᛖᚱᛁᚷ:|"
+  const expected = "fisc.flodu.ahofonferg | enberig |"
+  let result = riimut.futhorc.runesToLetters(content)
+  check result == expected
