@@ -9,7 +9,7 @@ test "Futhorc: transforms letters to runes":
   check result == expected
 
 test "Futhorc: transforms runes to letters":
-  const content = "ᚠᚢᚦᚩᚱᚳᚷᚹᚻᚾᛁᛡᛄᛇᛈᛉᛋᚴᛏᛒᛖᛗᛚᛝᛟᛞᚪᚫᚣᛠ:";
-  const expected = "fuþorcgwhnijjïpxsstbemlŋœdaæyea ";
+  const content = "ᚠᚢᚦᚩᚱᚳᚷᚹᚻᚾᛁᛡᛄᛇᛈᛉᛋᚴᛏᛒᛖᛗᛚᛝᛟᛞᚪᚫᚣᛠ:"
+  const expected = "fuþorcgwhnijjïpxsstbemlŋœdaæyea "
   let result = futhorc.runesToLetters(content)
   check result == expected
