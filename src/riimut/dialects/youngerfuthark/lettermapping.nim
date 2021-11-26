@@ -42,7 +42,7 @@ proc getLettersToRunesMap() : Table[string, string]=
       "ö": "ᚢ",
       "ø": "ᚢ",
       "ǫ": "ᚢ",
-      " ": ": ",
+      " ": ":",
   }.toTable()
 
   result = mapping
