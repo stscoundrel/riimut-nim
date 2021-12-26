@@ -11,7 +11,7 @@ Includes transformers for four main runic alphabets:
 
 ## Install
 
-`nimble install https:#github.com/stscoundrel/riimut-nim`
+`nimble install https://github.com/stscoundrel/riimut-nim`
 
 ## Usage
 
