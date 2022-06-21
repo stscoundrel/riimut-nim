@@ -50,7 +50,28 @@ import riimut
 const runicText = "ᛅᚢᚴ:ᛏᛅᚾᛁ:ᚴᛅᚱᚦᛁ:ᚴᚱᛁᛋᛏᚾᛅ"
 let latinText = riimut.youngerfuthark.runesToLetters(runicText)
 
-echo latinText) # "auk tani karþi kristna"
+echo latinText # "auk tani karþi kristna"
+
+```
+
+Rune variants in Younger Futhark:
+
+Younger Futhark comes with long branch (Danish) and short twig (Norwegian & Swedish) variants.
+```nim
+import riimut
+
+const letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
+
+# Comes with named functions per style.
+let longBranch = youngerfuthark.lettersToLongBranchRunes(letters);
+let shortTwig = youngerfuthark.lettersToShortTwigRunes(letters);
+
+echo longBranch; # ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ
+echo shortTwig;  # ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚦ
+
+# Default function can also be called with variant enum to define the runeset.
+let longBranchResult = youngerfuthark.lettersToRunes(letters, youngerfuthark.RuneVariant.longBranch)
+let shortTwigResult = youngerfuthark.lettersToRunes(letters, youngerfuthark.RuneVariant.shortTwig)
 
 ```
 
