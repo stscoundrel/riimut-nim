@@ -1,6 +1,6 @@
 import std/tables
 
-proc getLettersToRunesMap() : Table[string, string]=
+proc getLettersToLongBranchRunesMap() : Table[string, string]=
   const mapping = {
       "a": "ᛅ",
       "á": "ᛅ",
@@ -47,4 +47,52 @@ proc getLettersToRunesMap() : Table[string, string]=
 
   result = mapping
 
-export getLettersToRunesMap
+proc getLettersToShortTwigRunesMap() : Table[string, string]=
+  const mapping = {
+      "a": "ᛆ",
+      "á": "ᛆ",
+      "b": "ᛒ",
+      "c": "ᛌ",
+      "d": "ᛐ",
+      "ð": "ᚦ",
+      "e": "ᛁ",
+      "é": "ᛁ",
+      "f": "ᚠ",
+      "g": "ᚴ",
+      "h": "ᚽ",
+      "i": "ᛁ",
+      "í": "ᛁ",
+      "j": "ᛁ",
+      "k": "ᚴ",
+      "l": "ᛚ",
+      "m": "ᛘ",
+      "n": "ᚿ",
+      "o": "ᚢ",
+      "ó": "ᚢ",
+      "p": "ᛒ",
+      "q": "ᚴ",
+      "r": "ᚱ",
+      "s": "ᛌ",
+      "t": "ᛐ",
+      "þ": "ᚦ",
+      "u": "ᚢ",
+      "ú": "ᚢ",
+      "v": "ᚢ",
+      "w": "ᚢ",
+      "x": "ᛌ",
+      "y": "ᚢ",
+      "ý": "ᚢ",
+      "z": "ᛌ",
+      "å": "ᚢ",
+      "ä": "ᛆ",
+      "æ": "ᛆ",
+      "ö": "ᚢ",
+      "ø": "ᚢ",
+      "ǫ": "ᚢ",
+      " ": ":",
+  }.toTable()
+
+  result = mapping
+
+export getLettersToLongBranchRunesMap
+export getLettersToShortTwigRunesMap
