@@ -2,12 +2,13 @@
 
 Transform latin letters to runes & vice versa. Nim version.
 
-Includes transformers for four main runic alphabets:
+Includes transformers for four main runic alphabets and some variants:
 
 - Elder Futhark
 - Younger Futhark
 - Medieval Futhork
 - Futhorc (Anglo-Frisian runes)
+- Staveless Futhark
 
 ## Install
 
@@ -32,13 +33,18 @@ echo elderFuthark # ᚹᚨᚷᚨᚷᚨᛋᛏᛁᛉ:ᚨᛚᚢ:ᚹᛁᚻᚷᚢ:ᛋ
 
 # From Lord's Prayer, in Old Norse.
 const content = "Faðer uor som ast i himlüm, halgað warðe þit nama"
-let medievalFuthork = riimut.medievalfuthork.LettersToRunes(content)
+let medievalFuthork = riimut.medievalfuthork.lettersToRunes(content)
 echo medievalFuthork # ᚠᛆᚦᚽᚱ:ᚢᚮᚱ:ᛋᚮᛘ:ᛆᛋᛏ:ᛁ:ᚼᛁᛘᛚᚢᛘ,:ᚼᛆᛚᚵᛆᚦ:ᚠᛆᚱᚦᚽ:ᚦᛁᛏ:ᚿᛆᛘᛆ
 
 # From 8th century Franks Casket, in late West Saxon.
 const content = "fisc.flodu.ahofonferg | enberig |"
-let futhorc = riimut.futhorc.LettersToRunes(content)
+let futhorc = riimut.futhorc.lettersToRunes(content)
 echo futhorc # ᚠᛁᛋᚳ.ᚠᛚᚩᛞᚢ.ᚪᚻᚩᚠᚩᚾᚠᛖᚱᚷ:|:ᛖᚾᛒᛖᚱᛁᚷ:|
+
+# From Old Norse text in Hög runestone.
+const content = "kuþniutr þru sun lit rita stin þina ak bru kirþi aftiʀ bruþr sina asbiurn ak at kuþlaf"
+let staveless = riimut.stavelessfuthark.lettersToRunes(content)
+echo staveless # ᛍ╮ו⸜ᛁ╮⸍◟:ו◟╮:╵╮⸜:⸌ᛁ⸍:◟ᛁ⸍⸝:╵⸍ᛁ⸜:וᛁ⸜⸝:⸝ᛍ:ˏ◟╮:ᛍᛁ◟וᛁ:⸝ᛙ⸍ᛁʀ:ˏ◟╮ו◟:╵ᛁ⸜⸝:⸝╵ˏᛁ╮◟⸜:⸝ᛍ:⸝⸍:ᛍ╮ו⸌⸝ᛙ
 ```
 
 Runes to text:
@@ -60,14 +66,14 @@ Younger Futhark comes with long branch (Danish) and short twig (Norwegian & Swed
 ```nim
 import riimut
 
-const letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ";
+const letters = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ"
 
 # Comes with named functions per style.
-let longBranch = youngerfuthark.lettersToLongBranchRunes(letters);
-let shortTwig = youngerfuthark.lettersToShortTwigRunes(letters);
+let longBranch = youngerfuthark.lettersToLongBranchRunes(letters)
+let shortTwig = youngerfuthark.lettersToShortTwigRunes(letters)
 
-echo longBranch; # ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ
-echo shortTwig;  # ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚦ
+echo longBranch # ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ
+echo shortTwig  # ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚦ
 
 # Default function can also be called with variant enum to define the runeset.
 let longBranchResult = youngerfuthark.lettersToRunes(letters, youngerfuthark.RuneVariant.longBranch)
