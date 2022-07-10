@@ -57,3 +57,17 @@ test "Parses Futhorc to text":
   const expected = "fisc.flodu.ahofonferg | enberig |"
   let result = riimut.futhorc.runesToLetters(content)
   check result == expected
+
+test "Parses to Staveless Futhark":
+  # From Old Norse text in Hög runestone.
+  const content = "kuþniutr þru sun lit rita stin þina ak bru kirþi aftiʀ bruþr sina asbiurn ak at kuþlaf"
+  const expected = "ᛍ╮ו⸜ᛁ╮⸍◟:ו◟╮:╵╮⸜:⸌ᛁ⸍:◟ᛁ⸍⸝:╵⸍ᛁ⸜:וᛁ⸜⸝:⸝ᛍ:ˏ◟╮:ᛍᛁ◟וᛁ:⸝ᛙ⸍ᛁʀ:ˏ◟╮ו◟:╵ᛁ⸜⸝:⸝╵ˏᛁ╮◟⸜:⸝ᛍ:⸝⸍:ᛍ╮ו⸌⸝ᛙ"
+  let result = riimut.stavelessfuthark.lettersToRunes(content)
+  check result == expected
+
+test "Parses Staveless Futhark to text":
+  # From Old Norse text in Hög runestone.
+  const content = "ᛍ╮ו⸜ᛁ╮⸍◟:ו◟╮:╵╮⸜:⸌ᛁ⸍:◟ᛁ⸍⸝:╵⸍ᛁ⸜:וᛁ⸜⸝:⸝ᛍ:ˏ◟╮:ᛍᛁ◟וᛁ:⸝ᛙ⸍ᛁʀ:ˏ◟╮ו◟:╵ᛁ⸜⸝:⸝╵ˏᛁ╮◟⸜:⸝ᛍ:⸝⸍:ᛍ╮ו⸌⸝ᛙ"
+  const expected = "kuþniutr þru sun lit rita stin þina ak bru kirþi aftiʀ bruþr sina asbiurn ak at kuþlaf"
+  let result = riimut.stavelessfuthark.runesToLetters(content)
+  check result == expected
