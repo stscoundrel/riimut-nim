@@ -1,6 +1,6 @@
 # Package
 
-version       = "1.1.0"
+version       = "1.2.0"
 author        = "stscoundrel / Sampo Silvennoinen"
 description   = "Transform latin letters to runes &amp; vice versa"
 license       = "MIT"
