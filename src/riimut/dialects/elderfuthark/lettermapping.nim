@@ -40,6 +40,7 @@ proc getLettersToRunesMap() : Table[string, string]=
       "å": "ᛟ",
       "ä": "ᛇ",
       "æ": "ᛇ",
+      "œ": "ᛟ",
       "ö": "ᚢ",
       "ø": "ᚢ",
       "þ": "ᚦ",

@@ -3,27 +3,27 @@ import unittest
 import riimut/dialects/youngerfuthark
 
 test "Younger Futhark: transforms letters to runes (default transform)":
-  const content = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ"
-  const expected = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ"
+  const content = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæœöøǫþ"
+  const expected = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚢᚦ"
   let result = youngerfuthark.lettersToRunes(content)
   check result == expected
 
 test "Younger Futhark: transforms letters to long branch runes":
-  const content = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ"
-  const expected = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ"
+  const content = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæœöøǫþ"
+  const expected = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚢᚦ"
   let result = youngerfuthark.lettersToLongBranchRunes(content)
   check result == expected
 
 test "Younger Futhark: transforms letters to short twig runes":
-  const content = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ"
-  const expected = "ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚦ"
+  const content = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæœöøǫþ"
+  const expected = "ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚢᚦ"
   let result = youngerfuthark.lettersToShortTwigRunes(content)
   check result == expected
 
 test "Younger Futhark: transforms letters to runes with given variant":
-  const content = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæöøǫþ"
-  const expectedLongBranch = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚦ"
-  const expectedShortTwig = "ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚦ"
+  const content = "aábcdðeéfghiíjklmnoópqrstþuúvwxyýzåäæœöøǫþ"
+  const expectedLongBranch = "ᛅᛅᛒᛋᛏᚦᛁᛁᚠᚴᚼᛁᛁᛁᚴᛚᛘᚾᚢᚢᛒᚴᚱᛋᛏᚦᚢᚢᚢᚢᛋᚢᚢᛋᚢᛅᛅᚢᚢᚢᚢᚦ"
+  const expectedShortTwig = "ᛆᛆᛒᛌᛐᚦᛁᛁᚠᚴᚽᛁᛁᛁᚴᛚᛘᚿᚢᚢᛒᚴᚱᛌᛐᚦᚢᚢᚢᚢᛌᚢᚢᛌᚢᛆᛆᚢᚢᚢᚢᚦ"
   let longBranchResult = youngerfuthark.lettersToRunes(content, youngerfuthark.RuneVariant.longBranch)
   let shortTwigResult = youngerfuthark.lettersToRunes(content, youngerfuthark.RuneVariant.shortTwig)
   check longBranchResult == expectedLongBranch

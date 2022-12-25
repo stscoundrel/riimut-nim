@@ -3,8 +3,8 @@ import unittest
 import riimut/dialects/elderfuthark
 
 test "Elder Futhark: transforms letters to runes":
-  const content = "aábcdðeéfghiíjklmnŋoópqrstþuúvwxyýzåäæöøǫþ"
-  const expected = "ᚨᚨᛒᚲᛞᚦᛖᛖᚠᚷᚻᛁᛁᛃᚲᛚᛗᚾᛜᛟᛟᛈᚲᚱᛋᛏᚦᚢᚢᚹᚹᛋᛁᛁᛉᛟᛇᛇᚢᚢᛟᚦ"
+  const content = "aábcdðeéfghiíjklmnŋoópqrstþuúvwxyýzåäæœöøǫþ"
+  const expected = "ᚨᚨᛒᚲᛞᚦᛖᛖᚠᚷᚻᛁᛁᛃᚲᛚᛗᚾᛜᛟᛟᛈᚲᚱᛋᛏᚦᚢᚢᚹᚹᛋᛁᛁᛉᛟᛇᛇᛟᚢᚢᛟᚦ"
   let result = elderfuthark.lettersToRunes(content)
   check result == expected
 

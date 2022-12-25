@@ -3,8 +3,8 @@ import unittest
 import riimut/dialects/stavelessfuthark
 
 test "Staveless Futhark: transforms letters to runes":
-  const content = "aábcdðeéfghiíjklmnoópqrRstþuúvwxyýzåäæöøǫþ "
-  const expected = "⸝⸝ˏ╵⸍וᛁᛁᛙᛍᚽᛁᛁᛁᛍ⸌⠃⸜ˎˎˏᛍ◟◟╵⸍ו╮╮╮╮╵╮╮╵ˎ⸝⸝ˎˎˎו:"
+  const content = "aábcdðeéfghiíjklmnoópqrRstþuúvwxyýzåäæœöøǫþ "
+  const expected = "⸝⸝ˏ╵⸍וᛁᛁᛙᛍᚽᛁᛁᛁᛍ⸌⠃⸜ˎˎˏᛍ◟◟╵⸍ו╮╮╮╮╵╮╮╵ˎ⸝⸝ˎˎˎˎו:"
   let result = stavelessfuthark.lettersToRunes(content)
   check result == expected
 
